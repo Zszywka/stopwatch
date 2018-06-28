@@ -4,13 +4,11 @@ body {
   margin-top: 20px;
   background-color: #d3d3d3;
 }
-
 .button {
   text-decoration: none;
   margin: 20px;
   color: #343a40;
 }
-
 .controls {
   display: block;
   position: absolute;
@@ -50,16 +48,26 @@ body {
     color: #ffffff;
     border-bottom: 2px solid #319598;
 }
-
 .button:hover:before{
     transform: skewX(-45deg) translateX(250px);
     transition: all 0.4s ease-in;
 }
-
 #start {
-  color: green;
-
+  color: #008000;
 }
 #stop {
-  color: red;
+  color: #FF0000;
+}
+#reset, #list {
+  color: #000;
+}
+ul.results {
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #969696;
+  width: 50%;
+  margin: 0 auto;
+}
+#list {
+  margin-top: 50px;
 }

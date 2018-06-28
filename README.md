@@ -12,4 +12,5 @@ You should:
 -> npm install --save -dev babel-preset-latest
 -> npm install --save -dev babel-cli
 or (npm install --save -dev babel-cli babel-preset-latest)
-4. 
+4. run the script.js builds on the script-compilate.js (write in the console):
+-> npm start

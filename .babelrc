@@ -1,0 +1,4 @@
+/* compilation ES5 to ES6 */
+{
+  "presets": ["latest"]
+}
