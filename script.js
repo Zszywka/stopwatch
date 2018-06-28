@@ -22,8 +22,8 @@ class Stopwatch {
     return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(Math.floor(times.miliseconds))}`
   }    //  i po co math.floor??
   start() {
-    if (!this.runing) {  //sprawdzamy czy timer juz nie chodzi
-      this.runnig = true; //po uruchomieniu ustawiamy flage biegajacy teraz
+    if (!this.running) {  //sprawdzamy czy timer juz nie chodzi
+      this.running = true; //po uruchomieniu ustawiamy flage biegajacy teraz
       this.watch = setInterval(() => this.step(), 10); //interwal odpala sie co 10 ms metoda step
     }                                                  //metoda step to tik timera
   }
