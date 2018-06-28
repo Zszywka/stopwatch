@@ -6,9 +6,9 @@ class Stopwatch {
     this.print(this.times); //drukuje czas
   }
   // methods:
-  rest() {
+  reset() {
     this.times = {
-      minutes: 0;
+      minutes: 0,
       seconds: 0,
       miliseconds: 0
     };
@@ -19,7 +19,7 @@ class Stopwatch {
     this.display.innerText = this.format(this.times); //format przygotowuje tekst do wyswietlenia
   }                                                   //dlaczego nie moze byc format(times)??
   format(times) {
-    return `${pad0(times.minutes)}:${pad0(times.secunds)}:${pad0(Math.floor(times.miliseconds))}`
+    return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(Math.floor(times.miliseconds))}`
   }    //  i po co math.floor??
   start() {
     if (!this.runing) {  //sprawdzamy czy timer juz nie chodzi
@@ -43,12 +43,15 @@ class Stopwatch {
     if (this.times.seconds >= 60) {
       this.times.minutes += 1;
       this.times.seconds = 0;
+    }
   }
+  
   stop() {
     this.running = false;
     clearInterval(this.watch); //czy metoda clearInterval jest wbudowana ? jak setInterval?
   }                           //this.watch to ze startu
  }
+
 
 // instance of the class:
 const stopwatch = new Stopwatch(
