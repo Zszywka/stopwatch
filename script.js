@@ -46,6 +46,7 @@ class Stopwatch {
       this.times.seconds = 0;
     }
   }
+
   stop() {
     // if (this.running) {
     //   this.addToList(this.format(this.times))};
@@ -56,9 +57,10 @@ class Stopwatch {
 
   }
   resetList() {
-    
+
   }
 }
+
 
 // instance of the class:
 const stopwatch = new Stopwatch(
