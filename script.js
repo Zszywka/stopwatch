@@ -63,11 +63,15 @@ class Stopwatch {
     // list.innerText = '';
     const ul = document.querySelector('ul');
     const li = ul.querySelector('li');
-    // ul.removeChild(li);
-    // li.remove();
     while (ul.firstChild) {
       ul.removeChild(ul.firstChild);
     }
+  }
+  resetOneElementOfTheList() {
+    const ul = document.querySelector('ul');
+    const li = ul.querySelector('li');
+    // ul.removeChild(li);
+    li.remove();
   }
 }
 
@@ -88,6 +92,9 @@ resetButton.addEventListener('click', () => stopwatch.reset());
 
 let resetListButton = document.getElementById('resetList');
 resetListButton.addEventListener('click', () => stopwatch.resetList());
+
+let resetOneElementButton = document.getElementById('resetOneElementOfTheList');
+resetOneElementButton.addEventListener('click', () => stopwatch.resetOneElementOfTheList());
 
 function pad0(value) {
   let result = value.toString();
