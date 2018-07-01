@@ -1,9 +1,9 @@
 class Stopwatch {
-  constructor(display, results) {    //przekazuje jeden parametr-pole gdzie ma sie pojawic  timer
-    this.running = false;   //czy stoper pracuje
-    this.display = display; //przechowuje element DOM pod ktorym znajduje sie timer
-    this.reset();           //restartuje licznik
-    this.print(this.times); //drukuje czas
+  constructor(display, results) {
+    this.running = false;
+    this.display = display;
+    this.reset();
+    this.print(this.times);
     this.results = results;
   }
   // methods:
@@ -13,30 +13,29 @@ class Stopwatch {
       seconds: 0,
       miliseconds: 0
     };
-    this.print();  //implementacja metody print
+    this.print();
   }
   print() {
-    // display pod tym atrybutem znajduje sie wewnetrzy tekst elementu DOM
-    this.display.innerText = this.format(this.times); //format przygotowuje tekst do wyswietlenia
-  }                                                   //dlaczego nie moze byc format(times)??
+    this.display.innerText = this.format(this.times);
+  }
   format(times) {
     return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(Math.floor(times.miliseconds))}`
-  }    //  i po co math.floor??
+  }
   start() {
-    if (!this.running) {  //sprawdzamy czy timer juz nie chodzi
-      this.running = true; //po uruchomieniu ustawiamy flage biegajacy teraz
-      this.watch = setInterval( () => this.step(), 10); //interwal odpala sie co 10 ms metoda step
-    }                                                  //metoda step to tik timera
+    if (!this.running) {
+      this.running = true;
+      this.watch = setInterval( () => this.step(), 10);
+    }
   }
   step() {
-    if (!this.running) return; //sprawdza czy timer jest uruchomiony //nie powinno byc !
-    this.calculate();  //przeliczamy wynik
-    this.print();     //drukujemy wynik
+    if (!this.running) return;
+    this.calculate();
+    this.print();
   }
   calculate() {
     this.times.miliseconds += 1;
     // zerowanie milisekund
-    if (this.times.miliseconds >= 100) { //1sek=1000ms, ale metoda wykonuje sie co 10ms=> 1000/10=100
+    if (this.times.miliseconds >= 100) { 
       this.times.seconds += 1;
       this.times.miliseconds = 0;
     }
@@ -74,8 +73,8 @@ class Stopwatch {
 
 // instance of the class:
 const stopwatch = new Stopwatch(
-  document.querySelector('.stopwatch')  // istniejacaquertSelector wtbieramy element o klasie stopwatch z DOMu
-);   //i przekazujemy jako prametr
+  document.querySelector('.stopwatch') 
+);
 
 // running methods after clicking the button:
 let startButton = document.getElementById('start');
@@ -90,10 +89,8 @@ resetButton.addEventListener('click', () => stopwatch.reset());
 let resetListButton = document.getElementById('resetList');
 resetListButton.addEventListener('click', () => stopwatch.resetList());
 
-// funkcja ma dodawac zero do liczby jednocyfrowej
-// funkcja jest na zewnatrz funckji bo moze byc wykoszystywana gdzies indziej
-function pad0(value) {  //value to liczba
-  let result = value.toString(); //przeksztalca wartosc na stringa
+function pad0(value) {
+  let result = value.toString();
   if (result.length < 2) {
     result = '0' + result;
   }
