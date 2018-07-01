@@ -49,6 +49,7 @@ class Stopwatch {
 
   stop() {
     if (this.running) {
+<<<<<<< HEAD
       this.addList(this.format(this.times))
     };
     this.running = false;
@@ -58,6 +59,14 @@ class Stopwatch {
     // tworzy nowy element li
     const list = document.createElement('li');
     // element zapisuje zawartoscia czasu aktualnego
+=======
+      this.addToList(this.format(this.times))};
+    this.running = false;
+    clearInterval(this.watch); //czy metoda clearInterval jest wbudowana ? jak setInterval?
+  }                         //this.watch to ze startu (wbudwana ta funkcja)
+  addToList(times) {
+    const list = document.createElement('li');
+>>>>>>> d1bbe46fc003bc9ff4db07923c5db7c04eb21e14
     list.innerText = times;
     console.log(list);
     const li = document.querySelector('results');
