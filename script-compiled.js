@@ -91,16 +91,21 @@ var Stopwatch = function () {
     value: function addList(times) {
       // tworzy nowy element li
       var list = document.createElement('li');
-      // element zapisuje zawartoscia czasu aktualnego
       list.innerText = times;
-      console.log(list);
-      var li = document.querySelector('results');
+      var li = document.querySelector('ul');
       li.appendChild(list);
     }
   }, {
     key: 'resetList',
-    value: function resetList() {
-      list.innerText = '';
+    value: function resetList(list) {
+      // list.innerText = '';
+      var ul = document.querySelector('ul');
+      var li = ul.querySelector('li');
+      // ul.removeChild(li);
+      // li.remove();
+      while (ul.firstChild) {
+        ul.removeChild(ul.firstChild);
+      }
     }
   }]);
 
