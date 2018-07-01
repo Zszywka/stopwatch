@@ -80,18 +80,28 @@ var Stopwatch = function () {
   }, {
     key: 'stop',
     value: function stop() {
-      // if (this.running) {
-      //   this.addToList(this.format(this.times))};
+      if (this.running) {
+        this.addList(this.format(this.times));
+      };
       this.running = false;
-      clearInterval(this.watch); //czy metoda clearInterval jest wbudowana ? jak setInterval?
-    } //this.watch to ze startu (wbudwana ta funkcja)
-
+      clearInterval(this.watch);
+    }
   }, {
-    key: 'addToList',
-    value: function addToList(times) {}
+    key: 'addList',
+    value: function addList(times) {
+      // tworzy nowy element li
+      var list = document.createElement('li');
+      // element zapisuje zawartoscia czasu aktualnego
+      list.innerText = times;
+      console.log(list);
+      var li = document.querySelector('results');
+      li.appendChild(list);
+    }
   }, {
     key: 'resetList',
-    value: function resetList() {}
+    value: function resetList() {
+      list.innerText = '';
+    }
   }]);
 
   return Stopwatch;
