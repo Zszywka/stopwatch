@@ -107,6 +107,14 @@ var Stopwatch = function () {
         ul.removeChild(ul.firstChild);
       }
     }
+  }, {
+      key: 'resetOneElementOfTheList',
+      value: function resetOneElementOfTheList() {
+        var ul = document.querySelector('ul');
+        var li = ul.querySelector('li');
+        // ul.removeChild(li);
+        li.remove();
+      }    
   }]);
 
   return Stopwatch;
@@ -137,6 +145,11 @@ resetButton.addEventListener('click', function () {
 var resetListButton = document.getElementById('resetList');
 resetListButton.addEventListener('click', function () {
   return stopwatch.resetList();
+});
+
+var resetOneElementButton = document.getElementById('resetOneElementOfTheList');
+resetOneElementButton.addEventListener('click', function () {
+  return stopwatch.resetOneElementOfTheList();
 });
 
 // funkcja ma dodawac zero do liczby jednocyfrowej
