@@ -55,10 +55,6 @@ class Stopwatch {
     clearInterval(this.watch);
   }                        
   addList(times) {
-<<<<<<< HEAD
-    // tworzy nowy element li
-=======
->>>>>>> 4fd2dc85ccad752da9ab510288ad3f6bedaef77d
     const list = document.createElement('li');
     list.innerText = times;
     const li = document.querySelector('ul');
