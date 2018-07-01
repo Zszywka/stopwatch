@@ -48,13 +48,17 @@ class Stopwatch {
   }
 
   stop() {
-    // if (this.running) {
-    //   this.addToList(this.format(this.times))};
+    if (this.running) {
+      this.addToList(this.format(this.times))};
     this.running = false;
     clearInterval(this.watch); //czy metoda clearInterval jest wbudowana ? jak setInterval?
   }                         //this.watch to ze startu (wbudwana ta funkcja)
   addToList(times) {
-
+    const list = document.createElement('li');
+    list.innerText = times;
+    console.log(list);
+    const li = document.querySelector('results');
+    li.appendChild(list);
   }
   resetList() {
 
