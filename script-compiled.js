@@ -89,7 +89,6 @@ var Stopwatch = function () {
   }, {
     key: 'addList',
     value: function addList(times) {
-      // tworzy nowy element li
       var list = document.createElement('li');
       list.innerText = times;
       var li = document.querySelector('ul');
@@ -97,24 +96,22 @@ var Stopwatch = function () {
     }
   }, {
     key: 'resetList',
-    value: function resetList(list) {
+    value: function resetList() {
       // list.innerText = '';
       var ul = document.querySelector('ul');
       var li = ul.querySelector('li');
-      // ul.removeChild(li);
-      // li.remove();
       while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
       }
     }
   }, {
-      key: 'resetOneElementOfTheList',
-      value: function resetOneElementOfTheList() {
-        var ul = document.querySelector('ul');
-        var li = ul.querySelector('li');
-        // ul.removeChild(li);
-        li.remove();
-      }    
+    key: 'resetOneElementOfTheList',
+    value: function resetOneElementOfTheList() {
+      var ul = document.querySelector('ul');
+      var li = ul.querySelector('li');
+      // ul.removeChild(li);
+      li.remove();
+    }
   }]);
 
   return Stopwatch;
